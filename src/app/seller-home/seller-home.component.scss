@@ -1,0 +1,15 @@
+.product-list table {
+    text-align: left;
+    color: blueviolet;
+    border-collapse: collapse;
+}
+.product-list table td, .product-list table th{
+          border: 1px solid blueviolet;
+          min-height: 150px;
+          padding: 10px;
+          
+}
+.product-list table img {
+      height: 100px;
+      width: 100px;
+}

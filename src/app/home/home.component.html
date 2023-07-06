@@ -1,0 +1,22 @@
+<div class="product-cards product-list-wrapper  row mt-5 " >
+
+    <h1> Trendy Products</h1>
+    <div class="col-4" *ngFor="let item of products">
+        <div class="card">
+            <div class="card-header">
+                <img src="{{item.productImage}}" alt="">
+            </div>
+            <div class="card-body">
+                    <ul>
+                        <li> Product Name: {{item.productName}}</li>
+                        <li>Price: {{item.price}}</li>
+                        <li> product color: {{item.productColor}}</li>
+                        <li>product description:  {{item.productDescription}}</li>
+                        <li> <button class="form-button">Add to Cart</button> <button class="form-button" (click)="navigateToProduct(item.id)">View Details</button></li>
+                
+                    </ul>
+            </div>
+        </div>
+    </div>
+   
+</div>

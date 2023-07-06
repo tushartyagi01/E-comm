@@ -1,0 +1,31 @@
+<div  class="signup" *ngIf="showLogIn">
+    <h1 class="form-title mt-4"> User Sign Up </h1>
+    <form  #userSignUpForm="ngForm" (ngSubmit)="userSignUp(userSignUpForm.value)" action="" class="common-form">
+        <input class="form-input" type="text"  name="name" ngModel placeholder="Enter User Name">
+        
+        <input  class="form-input" type="text" name="email"  ngModel placeholder="Enter User Email">
+        <input class="form-input" type="password" name="password" ngModel placeholder="Enter Password">
+        <button type="submit" class="form-button"> Sign Up</button>
+        <a class="auth-toogle-link" (click)="openLogIn()" style="color:blueviolet">Already hava an account? Sign In</a>
+    </form>
+</div>
+<div  class="signIn" *ngIf="!showLogIn">
+    <h1 class="form-title mt-4"> User Sign In </h1>
+    <form  #userSignInForm="ngForm" (ngSubmit)="userSignIn(userSignInForm.value)" action="" class="common-form">
+       
+        
+        <input 
+         class="form-input"
+          type="text" name="email" 
+           ngModel 
+           #email="ngModel"
+           required
+           placeholder="Enter User Email"
+           >
+           <p><span style="color:red" *ngIf="email.invalid && email.touched">Please enter a valid email</span></p>
+        <input class="form-input" type="password" #password= "ngModel" required minlength="2" maxlength="10"name ="password" ngModel placeholder="Enter Password">
+        <p><span style="color:red" *ngIf="password.invalid && password.touched">Please enter a valid password</span></p>
+        <button type="submit" [disabled]="userSignInForm.invalid" class="form-button"> Sign In</button>
+        <a class="auth-toogle-link" (click)="openLogIn()" style="color:blueviolet" >Don't hava an account? Sign Up</a>
+    </form>
+</div>

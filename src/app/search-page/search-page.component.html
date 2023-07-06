@@ -1,0 +1,13 @@
+<div class=" row search-item mt-4 " *ngFor="let item of searchResult">
+    <div class="col-sm-3 " (click)="navigateToProduct(item.id)">
+        <img src="{{item.productImage}}" alt="">
+
+    </div>
+    <div class="col-sm-8">
+        <h4 style="color: blueviolet;" (click)="navigateToProduct(item.id)"> {{item.productName}} </h4>
+        <p><b>Price :</b> {{item.price}} INR</p>
+        <p><span><b>color:</b> {{item.productColor}}</span> <span><b>Category</b> {{item.productCategory}}</span></p>
+        <p>{{item.productDescription}}</p>
+    </div>
+
+</div>
